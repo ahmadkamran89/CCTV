@@ -1,0 +1,7 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/$USER/public_html
+    - /bin/cp -R * $DEPLOYPATH
+    # Optional: Run migrations or other commands if SSH is configured
+    # - /usr/local/bin/php artisan migrate --force
