@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EZVIZ Smart Home Security E-commerce</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@400;600;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-container": "#646464",
+                        "primary-container": "#549cff",
+                        "surface-container": "#f3ebf7",
+                        "surface-dim": "#dfd7e3",
+                        "secondary-container": "#e2e2e2",
+                        "tertiary-fixed-dim": "#ffb4a8",
+                        "on-surface": "#1d1a22",
+                        "secondary": "#5e5e5e",
+                        "on-tertiary-fixed": "#410000",
+                        "on-tertiary-container": "#6e0000",
+                        "surface-container-low": "#f9f1fd",
+                        "surface-bright": "#fef7ff",
+                        "on-primary-container": "#003366",
+                        "surface-tint": "#005eb4",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#474747",
+                        "on-secondary-fixed": "#1b1b1b",
+                        "inverse-on-surface": "#f6eefa",
+                        "secondary-fixed": "#e2e2e2",
+                        "on-primary-fixed": "#001b3c",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed": "#ffdad4",
+                        "on-background": "#1d1a22",
+                        "inverse-primary": "#a8c8ff",
+                        "outline": "#717784",
+                        "surface-container-high": "#ede6f1",
+                        "on-primary-fixed-variant": "#004689",
+                        "tertiary-container": "#ff6d59",
+                        "on-surface-variant": "#414752",
+                        "surface-variant": "#e7e0eb",
+                        "primary-fixed-dim": "#a8c8ff",
+                        "background": "#fef7ff",
+                        "primary": "#005eb4",
+                        "on-error": "#ffffff",
+                        "surface": "#fef7ff",
+                        "on-tertiary-fixed-variant": "#930000",
+                        "surface-container-highest": "#e7e0eb",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "outline-variant": "#c1c6d4",
+                        "inverse-surface": "#322f37",
+                        "error": "#ba1a1a",
+                        "tertiary": "#c00000",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#d5e3ff",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {},
+                    "fontFamily": {
+                        "headline": [
+                            "Manrope", "sans-serif"
+                        ],
+                        "body": [
+                            "Inter", "sans-serif"
+                        ],
+                        "label": [
+                            "Inter", "sans-serif"
+                        ]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, h5, h6, .font-headline { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar Component -->
+<nav class="sticky top-0 w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-2xl shadow-sm dark:shadow-none font-['Manrope'] text-sm tracking-wide bg-slate-50 dark:bg-slate-900">
+<div class="flex justify-between items-center w-full px-6 md:px-12 py-4 max-w-[1440px] mx-auto">
+<div class="flex items-center gap-12">
+<a class="text-2xl font-extrabold tracking-tighter text-blue-600 dark:text-blue-400 text-primary" href="#">EZVIZ</a>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-500 dark:hover:text-blue-300 transition-all duration-300" href="#">Indoor</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-500 dark:hover:text-blue-300 transition-all duration-300" href="#">Outdoor</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-500 dark:hover:text-blue-300 transition-all duration-300" href="#">Battery Cameras</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-500 dark:hover:text-blue-300 transition-all duration-300" href="#">Sensors</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-500 dark:hover:text-blue-300 transition-all duration-300" href="#">Support</a>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative hidden lg:block">
+<input class="bg-surface-container-low border border-outline-variant/15 rounded-lg py-2 pl-4 pr-10 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary-fixed/50 w-64 transition-all bg-transparent" placeholder="Search products..." type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant cursor-pointer">search</span>
+</div>
+<button class="text-primary hover:text-blue-500 dark:hover:text-blue-300 transition-all duration-300 active:scale-95">
+<span class="material-symbols-outlined text-[24px]">shopping_cart</span>
+</button>
+<button class="text-primary hover:text-blue-500 dark:hover:text-blue-300 transition-all duration-300 active:scale-95">
+<span class="material-symbols-outlined text-[24px]">person</span>
+</button>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined text-[24px]">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative w-full h-[600px] md:h-[700px] flex items-center bg-surface-container-low overflow-hidden">
+<div class="absolute inset-0 w-full h-full">
+<img alt="high-tech smart home interior with sleek modern robot vacuum on light hardwood floor bathed in soft natural sunlight" class="w-full h-full object-cover opacity-90 object-right-bottom" data-alt="high-tech smart home interior with sleek modern robot vacuum on light hardwood floor bathed in soft natural sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAQPOs9nDk2izeUuZNpDLfhWHKBvP-5Dw5oKv0zFb7rPVQdR7f-mWGQM_x9V5pEdkKnCaudAStMKyTv-ffk0JtmhOgN59urGoQ4w_p7w1TQHGHiZ212Xnf4HQwK8yFP0e_04wCJL_vpSv5jTdLs6Q-3uc6ZCthMXsk96OeDMp2W-FJONwBptUkf7wTNXnvxyZ15ZNQD0BXeGhqHAxLGGqnao9Ts2NluoN_JrQRWEk4wJHsWC6Ul5LBQg8szIIkyUkkQ1wM29Z5cvnu"/>
+<div class="absolute inset-0 bg-gradient-to-r from-surface-bright/95 via-surface-bright/80 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-[1440px] w-full mx-auto px-6 md:px-12">
+<div class="max-w-2xl">
+<span class="font-label text-xs uppercase tracking-[0.05em] text-primary font-semibold mb-4 block">New Release</span>
+<h1 class="font-headline text-[3.5rem] leading-[1.1] tracking-[-0.02em] font-extrabold text-on-surface mb-6">
+                    EZVIZ Smart Vacuum &amp; Mop Combo
+                </h1>
+<p class="font-body text-lg text-on-surface-variant mb-8 max-w-lg">
+                    Experience ultimate cleaning precision with advanced laser navigation and intelligent mop lifting technology. Your floors, effortlessly spotless.
+                </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-4 rounded-md font-semibold hover:opacity-90 transition-opacity active:scale-95">
+                        Shop Now
+                    </button>
+<button class="bg-transparent border border-outline-variant/15 text-primary px-8 py-4 rounded-md font-semibold hover:bg-surface-container transition-colors active:scale-95">
+                        Watch Video
+                    </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Content Canvas -->
+<main class="max-w-[1440px] mx-auto px-6 md:px-12 py-24 space-y-32">
+<!-- New Arrivals Carousel -->
+<section>
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="font-headline text-[2.5rem] font-extrabold text-on-surface tracking-tight mb-2">New Arrivals</h2>
+<p class="font-body text-on-surface-variant">The latest in intelligent home protection.</p>
+</div>
+<button class="text-primary font-semibold hover:text-primary-container transition-colors flex items-center gap-1 group">
+                    View All <span class="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Product Card 1 -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden hover:bg-surface-container-high transition-colors duration-300 flex flex-col h-full cursor-pointer p-4 pb-6">
+<div class="relative aspect-square w-full mb-6 bg-surface-container rounded-lg overflow-hidden flex items-center justify-center p-8">
+<span class="absolute top-4 left-4 bg-tertiary/10 text-tertiary text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">New</span>
+<img alt="sleek white dome security camera on minimalist pedestal against clean white background" class="object-contain w-full h-full mix-blend-multiply group-hover:scale-105 transition-transform duration-500" data-alt="sleek white dome security camera on minimalist pedestal against clean white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-seC6VRAONWaO4xQChxylDMcXak5Z6rJQIUfjLIuji_glX6o8bSraRv945ajT9hd11_EnXIQ_3rDBTj3nfXAx4bOWXOY33lwH4gi_R5dxGX6w3ieoFXseB5hfXmaZGJjrAbqUE2_m1qx70EKARLmoX8NnnhdyggX5d3LUmlDxwEB1DctE4MzHzj5nr2bixPswhLiBdGthAwaMMMqKi8F1XErUZh9buFe7xHCpo52oSQU8nekcBqVYRzCtR414aKJumLUHz943l_Uv"/>
+</div>
+<div class="flex flex-col flex-grow">
+<div class="flex items-center gap-1 mb-2 text-orange-500">
+<span class="material-symbols-outlined text-[16px] text-tertiary-container" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[16px] text-tertiary-container" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[16px] text-tertiary-container" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[16px] text-tertiary-container" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[16px] text-tertiary-container" data-weight="fill">star_half</span>
+<span class="text-xs text-on-surface-variant ml-1">(4.8)</span>
+</div>
+<h3 class="font-headline font-semibold text-lg text-on-surface mb-1">TY1 Pro 1080P</h3>
+<p class="font-body text-sm text-on-surface-variant mb-4 line-clamp-2">Smart Wi-Fi Pan &amp; Tilt Camera with AI Human Detection.</p>
+<div class="mt-auto flex items-center justify-between">
+<span class="font-headline font-bold text-xl text-primary">₨ 8,500</span>
+<button class="bg-surface-container text-primary p-2 rounded-md hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden hover:bg-surface-container-high transition-colors duration-300 flex flex-col h-full cursor-pointer p-4 pb-6">
+<div class="relative aspect-square w-full mb-6 bg-surface-container rounded-lg overflow-hidden flex items-center justify-center p-8">
+<img alt="outdoor bullet security camera with dual antennas mounted on subtle concrete texture" class="object-contain w-full h-full mix-blend-multiply group-hover:scale-105 transition-transform duration-500" data-alt="outdoor bullet security camera with dual antennas mounted on subtle concrete texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCNA7Sa1RkP13NLNnN-ByidCzmjoa1ARVFNv5fwILl7LntyVjB-dZnZybaf-7k-au7bgIcvy4Ir6phuDmwIAZAqfCd7DF1VZTUrjdnbjaouUmIgDzs-C8TqqFiTueAXeJaX1u8RpyfJYGTyz7McQlI9ifieAudBGR3FwXPXoGYzhL_zxUAvDVXkbqQuXt0o3HY8_QVm5JDAsvOfIlqQcqhcDNuvU0QYVcCWxni4JH96vpja_tLQKdTBK70tfmhpubuiMTRd_Ekmv4_"/>
+</div>
+<div class="flex flex-col flex-grow">
+<div class="flex items-center gap-1 mb-2 text-orange-500">
+<span class="material-symbols-outlined text-[16px] text-tertiary-container" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[16px] text-tertiary-container" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[16px] text-tertiary-container" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[16px] text-tertiary-container" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[16px] text-tertiary-container">star</span>
+<span class="text-xs text-on-surface-variant ml-1">(4.0)</span>
+</div>
+<h3 class="font-headline font-semibold text-lg text-on-surface mb-1">C3WN 1080P</h3>
+<p class="font-body text-sm text-on-surface-variant mb-4 line-clamp-2">Outdoor Wi-Fi Camera with strong wireless connection.</p>
+<div class="mt-auto flex items-center justify-between">
+<span class="font-headline font-bold text-xl text-primary">₨ 12,200</span>
+<button class="bg-surface-container text-primary p-2 rounded-md hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden hover:bg-surface-container-high transition-colors duration-300 flex flex-col h-full cursor-pointer p-4 pb-6">
+<div class="relative aspect-square w-full mb-6 bg-surface-container rounded-lg overflow-hidden flex items-center justify-center p-8">
+<img alt="smart doorbell camera with glossy black faceplate on clean modern wall" class="object-contain w-full h-full mix-blend-multiply group-hover:scale-105 transition-transform duration-500" data-alt="smart doorbell camera with glossy black faceplate on clean modern wall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCK_TxQfSYB8Mp2WpbcqMXIpmoFBr0NCUTFU5vWH2RGoCwRwP8RjNNc_VFsmySLVyIcMcvs6HKKV3e-ebpg1kYEWFMGIen-vClpbwWZAAj3Cm6rD1rYFdKspoLVVLBeTW0YuxMKUVTf2ZlZT6rOyskG68GpsSFIXJhYugN4uA-iJK2UHndEEYw2rLUFSnXXwQKy3RJtbNYr9bHKOolzRGN3RZWkiVnMTJS3fXOf-i7fERNZeFj8zAKVr_TWbc9FZEhZB_sZtIIVoPS4"/>
+</div>
+<div class="flex flex-col flex-grow">
+<div class="flex items-center gap-1 mb-2 text-orange-500">
+<span class="material-symbols-outlined text-[16px] text-tertiary-container" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[16px] text-tertiary-container" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[16px] text-tertiary-container" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[16px] text-tertiary-container" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[16px] text-tertiary-container" data-weight="fill">star</span>
+<span class="text-xs text-on-surface-variant ml-1">(5.0)</span>
+</div>
+<h3 class="font-headline font-semibold text-lg text-on-surface mb-1">DB2 Pro</h3>
+<p class="font-body text-sm text-on-surface-variant mb-4 line-clamp-2">Battery-Powered Video Doorbell with 2K+ Resolution.</p>
+<div class="mt-auto flex items-center justify-between">
+<span class="font-headline font-bold text-xl text-primary">₨ 24,900</span>
+<button class="bg-surface-container text-primary p-2 rounded-md hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden hover:bg-surface-container-high transition-colors duration-300 flex flex-col h-full cursor-pointer p-4 pb-6">
+<div class="relative aspect-square w-full mb-6 bg-surface-container rounded-lg overflow-hidden flex items-center justify-center p-8">
+<img alt="minimalist white smart home motion sensor on elegant marble surface" class="object-contain w-full h-full mix-blend-multiply group-hover:scale-105 transition-transform duration-500" data-alt="minimalist white smart home motion sensor on elegant marble surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBrLAyB4ztAQ3dfCouSMKwAjZ_hVBJtEhPsDGjbvcJaNMBFkzPCGh62M9HhJqerxyy7f15YLbUhyIrhUbcSxWJJ-tW21OZMKyrdHUVIrSUHWh_xq25kNmqoCeSgqlpMxUc6JBy5u2QhV5pA7h2Dx-lDvh_Xg23kggwUzNJqS64g3yqnKMGZAiuGTR2msShq3kG702w-Vvpdga9aRS1FjBH5WiZQ3_h2hhHs9QkCDIDdOvZF8NA4HpsZ4vEARWp_DmiZhOtHXZsmNz4"/>
+</div>
+<div class="flex flex-col flex-grow">
+<div class="flex items-center gap-1 mb-2 text-orange-500">
+<span class="material-symbols-outlined text-[16px] text-tertiary-container" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[16px] text-tertiary-container" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[16px] text-tertiary-container" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[16px] text-tertiary-container" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[16px] text-tertiary-container">star_half</span>
+<span class="text-xs text-on-surface-variant ml-1">(4.6)</span>
+</div>
+<h3 class="font-headline font-semibold text-lg text-on-surface mb-1">T1C PIR Sensor</h3>
+<p class="font-body text-sm text-on-surface-variant mb-4 line-clamp-2">Smart Motion Sensor requiring Home Gateway.</p>
+<div class="mt-auto flex items-center justify-between">
+<span class="font-headline font-bold text-xl text-primary">₨ 4,100</span>
+<button class="bg-surface-container text-primary p-2 rounded-md hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Lifestyle Banner -->
+<section class="relative w-full h-[500px] rounded-2xl overflow-hidden bg-surface-container-low flex items-center group">
+<img alt="luxurious modern living room bathed in golden hour light with subtle smart security camera mounted gracefully in corner" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" data-alt="luxurious modern living room bathed in golden hour light with subtle smart security camera mounted gracefully in corner" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqrGLbIG_qfPsg12PCGpEQrjxlaaCy5qdxs8EesQLgfltxYFicRfpGfIFSQrw1UOXwb7eQ-4UjjRsM-ivf5Ha6GTIzTpka61FeIrgoWimn8hC7WlBbrZl4TwiY4pnR0yLu5pUPk5O0XBoalWE2f39OcxojzrtfUGHu4cm0iMNSPnEqI3dxmZJcVkW9hLBs6bbl_XdSuDhuc4Q9T350RWTGbQUGMrnpMkqdjX54fLBBlElf1j9WZ8l5Gucc06desJr6KwQ204hiQJqG"/>
+<div class="absolute inset-0 bg-gradient-to-r from-on-primary-fixed/80 via-on-primary-fixed/40 to-transparent"></div>
+<div class="relative z-10 px-8 md:px-16 max-w-2xl text-on-primary">
+<h2 class="font-headline text-[3rem] font-extrabold leading-tight tracking-tight mb-4 text-surface-bright">Invisible Protection.<br/>Visible Elegance.</h2>
+<p class="font-body text-lg text-surface-bright/80 mb-8">Integrate our award-winning indoor cameras seamlessly into your home decor. Peace of mind shouldn't compromise your style.</p>
+<button class="bg-surface-bright text-on-primary-fixed px-8 py-3 rounded-md font-semibold hover:bg-surface-container transition-colors">
+                     Explore Indoor Series
+                 </button>
+</div>
+</section>
+<!-- Categorized Grid: Indoor -->
+<section>
+<div class="flex items-center gap-4 mb-8">
+<div class="h-[2px] w-12 bg-primary"></div>
+<h2 class="font-headline text-[2rem] font-bold text-on-surface">Indoor Wi-Fi Cameras</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<!-- Reusing card style from above for brevity, assuming similar structure but different content -->
+<div class="group bg-surface-container-lowest border border-outline-variant/15 rounded-lg overflow-hidden hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] transition-all duration-300 p-4">
+<div class="aspect-square bg-surface-container/50 rounded flex items-center justify-center p-6 mb-4">
+<img alt="indoor cam" class="object-contain w-full h-full mix-blend-multiply" data-alt="sleek white indoor security camera close up" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7rx2UTeq7AVwxHqrR1BpJb8obuDDch0kXn4g3d9OO03WTbx9PVnVseONinUJYV7HbhIwJD0AJW423H7nsLe5DNc2unrHFrCkrCghHxnSVLQpxZ69plkenV7RW0flyrk45yZuKg9v4pBwCvwuHMV3-k7u-r7iiTtahBrfKslGCcAAZ2gLM4isFOIi9yexJeb02sD9sdY-LyEv5edxx6sjlKeS91e5CAA-wNUaoccvr70v80Ot69cfwC1y_padret7dv1F1cRFSs-1D"/>
+</div>
+<h3 class="font-headline font-semibold text-on-surface mb-1">C6N 4MP</h3>
+<p class="font-body text-sm text-on-surface-variant mb-4">Smart Wi-Fi Pan &amp; Tilt</p>
+<span class="font-headline font-bold text-primary">₨ 10,500</span>
+</div>
+<div class="group bg-surface-container-lowest border border-outline-variant/15 rounded-lg overflow-hidden hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] transition-all duration-300 p-4">
+<div class="aspect-square bg-surface-container/50 rounded flex items-center justify-center p-6 mb-4">
+<img alt="indoor cam" class="object-contain w-full h-full mix-blend-multiply" data-alt="small discreet indoor camera" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDi14WU2iBQkk8mZGUc6zSMEXvx7rAQ1jnV5OS0wL_lNvgTTuqcJ-ODySDz4dB0MakTQzHj2gTprnTVe0PQC2zcSaoHeE4dHJYXLznY_xRBhFjbK7aqA3nMWlrboOmSAnda60Ppfy3dfDvKw8h-Vq_3-nWCzT4yET5k05efS1M3yn-K8epFL0diOl4zjBfxc_im3lzKIKcntSu6IfT0gMd7gYBGHNZ7eSbXpZU7ymo0pOMbIOwjgB2Vg72XcBiPprdp2w06Mk510q0R"/>
+</div>
+<h3 class="font-headline font-semibold text-on-surface mb-1">C1C-B</h3>
+<p class="font-body text-sm text-on-surface-variant mb-4">Compact Smart Camera</p>
+<span class="font-headline font-bold text-primary">₨ 5,200</span>
+</div>
+<div class="group bg-surface-container-lowest border border-outline-variant/15 rounded-lg overflow-hidden hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] transition-all duration-300 p-4">
+<div class="aspect-square bg-surface-container/50 rounded flex items-center justify-center p-6 mb-4">
+<img alt="indoor cam" class="object-contain w-full h-full mix-blend-multiply" data-alt="premium indoor security camera black base" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcjvBOf8irWuCZOX3xQ1PlUJv_Gr4oUng1NOo6BXICS9iaBB9BpQ15O6jWuMFzavvciS3ny77AQWQSpcNj8hVKRpF_8nzNX9GPbf2CjyOeFl50SUF0AIMheEoLMRT-JO3xMD63DNKPS1TzosE3u0ByYwfRW6U4in6HZbeuFuOhz76YEGrCs4SFxBfFY0U-oqXErvAHzuEJuScyljxDzpFBrDsyH9c6Vshm5eojbbAD_YVGBAUL3bnPx7Pz16r3l2ZHSoP7M0PbTkqm"/>
+</div>
+<h3 class="font-headline font-semibold text-on-surface mb-1">CP1 3MP</h3>
+<p class="font-body text-sm text-on-surface-variant mb-4">High-Res Pan/Tilt</p>
+<span class="font-headline font-bold text-primary">₨ 9,000</span>
+</div>
+<div class="group bg-surface-container-lowest border border-outline-variant/15 rounded-lg overflow-hidden hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] transition-all duration-300 p-4 flex flex-col items-center justify-center bg-surface-container-low hover:bg-surface-container transition-colors cursor-pointer text-center">
+<span class="material-symbols-outlined text-[40px] text-primary mb-2">grid_view</span>
+<span class="font-headline font-semibold text-primary">View All Indoor</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Component -->
+<footer class="w-full py-12 px-6 md:px-12 bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 font-['Inter'] text-xs uppercase tracking-[0.05em] flat no shadows">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-[1440px] mx-auto">
+<div class="flex flex-col gap-6">
+<div class="text-xl font-bold text-slate-900 dark:text-slate-100 text-on-surface font-headline tracking-tighter">EZVIZ</div>
+<p class="text-slate-500 dark:text-slate-400 normal-case tracking-normal">Precision Security Systems. Protecting what matters most with innovative smart home technology.</p>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-slate-100 mb-4">Quick Links</h4>
+<ul class="space-y-3">
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" href="#">About Us</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" href="#">Product Support</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" href="#">Terms of Service</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" href="#">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-slate-100 mb-4">Products</h4>
+<ul class="space-y-3">
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" href="#">Indoor Cameras</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" href="#">Outdoor Cameras</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" href="#">Smart Sensors</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-slate-100 mb-4">Newsletter</h4>
+<p class="text-slate-500 dark:text-slate-400 normal-case tracking-normal mb-4">Stay updated with the latest security innovations.</p>
+<div class="flex">
+<input class="bg-surface-container-lowest border border-outline-variant/30 rounded-l-md py-2 px-3 w-full focus:outline-none focus:border-primary normal-case tracking-normal" placeholder="Email Address" type="email"/>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-r-md hover:bg-primary-container hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="max-w-[1440px] mx-auto mt-12 pt-6 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
+<span class="text-slate-500 dark:text-slate-400">© 2024 EZVIZ Inc. Precision Security Systems.</span>
+<div class="flex gap-4">
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" href="#"><span class="material-symbols-outlined">language</span></a>
+</div>
+</div>
+</footer>
+</body></html>
